@@ -14,36 +14,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FabMenu(
-          fabBackgroundColor: Colors.amber,
-          elevation: 2.0,
-          fabAlignment: Alignment.topCenter,
-          fabIcon: const Icon(Icons.more_horiz),
-          closeMenuButton: const Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-          overlayOpacity: 0.5,
-          overlayColor: Colors.amber,
-          children: [
-            MenuItem(
-              title: 'Eventos Finalizados',
-              onTap: () {},
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold),
-            ),
-            MenuItem(
-              title: 'Próximos Eventos',
-              onTap: () {},
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold),
-            ),
-           
-          ]),
       body: const Center(
         child: Text('Flutter animated FAB Menu'),
       ),
