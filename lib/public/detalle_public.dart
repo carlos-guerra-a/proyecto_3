@@ -25,6 +25,7 @@ class _DetallePublicPageState extends State<DetallePublicPage> {
         ),
       ),
       body: Container(
+        
         child: FutureBuilder<DocumentSnapshot>(
           future: FirestoreService().MostrarEvento(widget.eventoId),
           builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
@@ -48,6 +49,7 @@ class _DetallePublicPageState extends State<DetallePublicPage> {
                   ),
                   
                   Container(
+                    
                     height: 300,
                     alignment: Alignment.bottomRight,
                     decoration: BoxDecoration(
@@ -77,9 +79,15 @@ class _DetallePublicPageState extends State<DetallePublicPage> {
                             padding: EdgeInsets.all(5),
                             child: Row(
                               children: [
-                                Icon(
-                                  Icons.favorite,
-                                  color: Colors.red,
+                                InkWell(
+                                  child: Icon(
+                                    Icons.favorite,
+                                    color: Colors.red,
+                                    
+                                  ),
+                                  onTap: () {
+                                    print(evento['fechaHora']);
+                                  },
                                 ),
                                 SizedBox(width: 5),
                                 Text(
@@ -133,7 +141,7 @@ class _DetallePublicPageState extends State<DetallePublicPage> {
                           
                               Container(
                                 width: 350,
-                                child: Text('Descripción: ${evento['descripcion']}',style: TextStyle(fontSize: 20), softWrap: true,)),
+                                child: Text('Descripción: ${evento['fechaHora']}',style: TextStyle(fontSize: 20), softWrap: true,)),
                             ],
                           ),
                         ],

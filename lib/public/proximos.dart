@@ -5,14 +5,14 @@ import 'package:proyecto_3/public/detalle_public.dart';
 import 'package:proyecto_3/services/firestore_service.dart';
 import 'package:proyecto_3/widgets/evento_widget.dart';
 
-class EventosFuturosPage extends StatefulWidget {
-  const EventosFuturosPage({super.key});
+class EventosProxPage extends StatefulWidget {
+  const EventosProxPage({super.key});
 
   @override
-  State<EventosFuturosPage> createState() => _EventosFuturosPageState();
+  State<EventosProxPage> createState() => _EventosFuturosPageState();
 }
 
-class _EventosFuturosPageState extends State<EventosFuturosPage> {
+class _EventosFuturosPageState extends State<EventosProxPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +29,7 @@ class _EventosFuturosPageState extends State<EventosFuturosPage> {
         Expanded(child: 
 
           StreamBuilder(
-            stream: FirestoreService().eventos(), 
+            stream: FirestoreService().eventosProximos(), 
             builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
               if (!snapshot.hasData || snapshot.connectionState == ConnectionState.waiting) {
 

@@ -4,7 +4,23 @@ class FirestoreService{
 
   //listar eventos
   Stream<QuerySnapshot>eventos(){
-    return FirebaseFirestore.instance.collection('eventos').snapshots();
+    return FirebaseFirestore.instance.collection('eventos').orderBy('fechaHora').snapshots();
+  }
+
+
+  //finalizados
+
+   Stream<QuerySnapshot> eventosFinalizados() {
+    DateTime ahora = DateTime.now();
+    Timestamp timeStampNow = Timestamp.fromDate(ahora);
+    return FirebaseFirestore.instance.collection('eventos').where('fechaHora', isLessThan: timeStampNow).snapshots();
+  }
+
+//proximos
+   Stream<QuerySnapshot> eventosProximos() {
+    DateTime ahora = DateTime.now();
+    Timestamp timeStampNow = Timestamp.fromDate(ahora);
+    return FirebaseFirestore.instance.collection('eventos').where('fechaHora', isGreaterThanOrEqualTo: timeStampNow).snapshots();
   }
 
   //agregar evento

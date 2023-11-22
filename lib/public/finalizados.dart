@@ -29,7 +29,7 @@ class _EventosFinalizadosPageState extends State<EventosFinalizadosPage> {
         Expanded(child: 
 
           StreamBuilder(
-            stream: FirestoreService().eventos(), 
+            stream: FirestoreService().eventosFinalizados(), 
             builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
               if (!snapshot.hasData || snapshot.connectionState == ConnectionState.waiting) {
 
