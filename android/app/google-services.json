@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "662892045464",
+    "project_id": "dam-certamen-3",
+    "storage_bucket": "dam-certamen-3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662892045464:android:7477b5c9c0734043659ced",
+        "android_client_info": {
+          "package_name": "com.dam301.damcertamen3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmrvB85_s865EtitH2dyiFLeU2tG-snx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
