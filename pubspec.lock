@@ -9,6 +9,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.12"
+  animated_fab_button_menu:
+    dependency: "direct main"
+    description:
+      name: animated_fab_button_menu
+      sha256: "3d942e509264fac1072507308254bb0693cb13a8faeba36563ffdfed1f63c9a0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
   animations:
     dependency: "direct main"
     description:
@@ -89,6 +97,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.2"
+  convex_bottom_bar:
+    dependency: "direct main"
+    description:
+      name: convex_bottom_bar
+      sha256: ebf0f3deb1e8e99374d844fee7485d2980ec502dedfaad395c12118477933aef
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.0"
   cupertino_icons:
     dependency: "direct main"
     description:
