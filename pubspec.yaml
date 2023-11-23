@@ -39,13 +39,11 @@ dependencies:
   firebase_auth: ^4.14.0
   cupertino_icons: ^1.0.2
   eva_icons_flutter: ^3.1.0
-  animations: ^2.0.8
-  carousel_slider: ^4.2.1
-  indexed_list_view: ^3.0.1
-  transformable_list_view: ^0.4.0
-  flutter_staggered_grid_view: ^0.7.0
-  animated_fab_button_menu: ^0.0.2
   convex_bottom_bar: ^3.2.0
+  intl: ^0.18.1
+  material_design_icons_flutter: ^7.0.7296
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:

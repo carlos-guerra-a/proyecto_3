@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:proyecto_3/admin/eventos.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:proyecto_3/admin/formulario.dart';
+// import 'package:proyecto_3/admin/eventos.dart';
 import 'package:proyecto_3/public/index_public.dart';
 
 void main() async {
@@ -17,6 +19,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     
     return MaterialApp(
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
+      supportedLocales: [Locale('es')],
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -38,7 +42,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  PublicPage(),
+      home:  AgregarPage(),
+    
     );
   }
 }
