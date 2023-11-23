@@ -47,6 +47,7 @@ class FirestoreService{
     return FirebaseFirestore.instance.collection('eventos').doc(docId).get() ; 
   }
 
+<<<<<<< Updated upstream
   //listar tipo de eventos
   //listar eventos
   Future<QuerySnapshot>tipos(){
@@ -55,5 +56,10 @@ class FirestoreService{
 
 
 
+=======
+   Future<QuerySnapshot>tipos(){
+    return FirebaseFirestore.instance.collection('tipos').get();
+  }
+>>>>>>> Stashed changes
 
 }

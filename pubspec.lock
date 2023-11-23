@@ -252,6 +252,17 @@ packages:
       sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
       url: "https://pub.dev"
     source: hosted
+<<<<<<< Updated upstream
+=======
+    version: "3.0.1"
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
+      url: "https://pub.dev"
+    source: hosted
+>>>>>>> Stashed changes
     version: "0.18.1"
   js:
     dependency: transitive
@@ -442,6 +453,17 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.0"
+<<<<<<< Updated upstream
+=======
+  transformable_list_view:
+    dependency: "direct main"
+    description:
+      name: transformable_list_view
+      sha256: cffe2ae8d5d71de200fba2fa402dac7febabf06e8d0184ce6a8180fd16684877
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.4.0"
+>>>>>>> Stashed changes
   typed_data:
     dependency: transitive
     description:
