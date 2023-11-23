@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:proyecto_3/services/firestore_service.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DetallePublicPage extends StatefulWidget {
   const DetallePublicPage({super.key, required this.eventoId});
@@ -18,10 +19,10 @@ class _DetallePublicPageState extends State<DetallePublicPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black87,
-        title: Text('Volver', style: TextStyle(color: Colors.white)),
+        title: Text('Volver', style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.w600)),
         leading: InkWell(
           onTap: () => Navigator.pop(context),
-          child: Icon(HeroIcons.backspace, color: Colors.white),
+          child: Icon(HeroIcons.chevron_left, color: Colors.white),
         ),
       ),
       body: Container(
@@ -68,11 +69,31 @@ class _DetallePublicPageState extends State<DetallePublicPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                           Container(
+                            height: 100,
                             padding: EdgeInsets.all(5),
-                            child: Text(
-                              evento['nombre'],
-                              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
-                              textAlign: TextAlign.center,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  
+                                  evento['nombre'],
+                                  style: GoogleFonts.openSans(
+                                    textStyle: TextStyle(
+                                      fontSize: 35, 
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  textAlign: TextAlign.center,
+                                ),
+                                Text('${evento['descripcion']}',style: GoogleFonts.roboto(
+                                    textStyle: TextStyle(
+                                      fontSize: 18, 
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.grey,
+                                    ),
+                                  ), softWrap: true,)
+                              ],
                             ),
                           ),
                           Container(
@@ -92,7 +113,13 @@ class _DetallePublicPageState extends State<DetallePublicPage> {
                                 SizedBox(width: 5),
                                 Text(
                                   evento['meGusta'].toString(),
-                                  style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),
+                                  style: GoogleFonts.openSans(
+                                    textStyle: TextStyle(
+                                      fontSize: 32, 
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),
@@ -121,45 +148,31 @@ class _DetallePublicPageState extends State<DetallePublicPage> {
                     // Otros datos del evento debajo del nombre
                     Expanded(
                       child: Container(
-                        padding: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(8),
                         child: Column(
                           children: [
-                            Expanded(
-                              child: Column(
-                                
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Icon(HeroIcons.map_pin),
-                                      Text(' Lugar: ${evento['lugar']}', style: TextStyle(fontSize: 20),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Icon(HeroIcons.sparkles),
-                                      Container(child: Text(' Tipo: ${evento['tipo']}',style: TextStyle(fontSize: 20), softWrap: true,)),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(child: Icon(HeroIcons.map_pin, size: 40, color: Color(0xffE5A65E),)),
+                                    
+                                    Text('   ${evento['lugar']}', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),)
+                                  ],
+                                ),
+                                Divider(),
+                                Row(
+                                  children: [
+                                    Container(child: Icon(HeroIcons.sparkles, size: 40, color: Color(0xffE5A65E),)),
+                                    Text('   ${evento['tipo']}',style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500), softWrap: true),
+                                  ],
+                                ),
+                                Divider(),
+                              ],
                             ),
-                            Expanded(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Icon(HeroIcons.clipboard),
-                                      Container(
-                                        width: 350,
-                                        child: Text(' Descripción: ${evento['descripcion']}',style: TextStyle(fontSize: 20), softWrap: true,)),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
+                            
                           ],
                         ),
                       ),

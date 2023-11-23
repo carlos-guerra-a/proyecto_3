@@ -47,6 +47,7 @@ dependencies:
   animated_fab_button_menu: ^0.0.2
   convex_bottom_bar: ^3.2.0
   icons_plus: ^4.0.0
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   flutter_test:
