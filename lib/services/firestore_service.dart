@@ -47,6 +47,13 @@ class FirestoreService{
     return FirebaseFirestore.instance.collection('eventos').doc(docId).get() ; 
   }
 
-   
+  //listar tipo de eventos
+  //listar eventos
+  Future<QuerySnapshot>tipos(){
+    return FirebaseFirestore.instance.collection('tipos').orderBy('tipo').get();
+  }
+
+
+
 
 }
