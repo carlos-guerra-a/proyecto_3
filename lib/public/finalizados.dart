@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:proyecto_3/admin/agregar.dart';
 import 'package:proyecto_3/public/detalle_public.dart';
 import 'package:proyecto_3/services/firestore_service.dart';
 import 'package:proyecto_3/widgets/evento_widget.dart';

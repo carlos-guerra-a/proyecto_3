@@ -40,6 +40,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   eva_icons_flutter: ^3.1.0
   convex_bottom_bar: ^3.2.0
+  icons_plus: ^4.0.0
+  flutter_localizations:
+    sdk: flutter
+  material_design_icons_flutter: ^7.0.7296
 
 dev_dependencies:
   flutter_test:
