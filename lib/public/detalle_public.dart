@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:icons_plus/icons_plus.dart';
 import 'package:proyecto_3/services/firestore_service.dart';
 
 class DetallePublicPage extends StatefulWidget {
@@ -21,7 +21,7 @@ class _DetallePublicPageState extends State<DetallePublicPage> {
         title: Text('Volver', style: TextStyle(color: Colors.white)),
         leading: InkWell(
           onTap: () => Navigator.pop(context),
-          child: Icon(HeroIcons.backspace, color: Colors.white),
+          child: Icon(EvaIcons.backspace, color: Colors.white),
         ),
       ),
       body: Container(
@@ -81,7 +81,7 @@ class _DetallePublicPageState extends State<DetallePublicPage> {
                               children: [
                                 InkWell(
                                   child: Icon(
-                                    HeroIcons.fire,
+                                    Icons.favorite,
                                     color: Colors.red,
                                     
                                   ),
@@ -125,24 +125,23 @@ class _DetallePublicPageState extends State<DetallePublicPage> {
                         children: [
                           Row(
                             children: [
-                              Icon(HeroIcons.map_pin),
-                              Text(' Lugar: ${evento['lugar']}', style: TextStyle(fontSize: 20),
+                              Text('Lugar: ${evento['lugar']}', style: TextStyle(fontSize: 20),
                               ),
-
+                              
+                              
                             ],
                           ),
                           Row(
                             children: [
-                              Icon(HeroIcons.sparkles),
-                              Container(child: Text(' Tipo: ${evento['tipo']}',style: TextStyle(fontSize: 20), softWrap: true,)),
+                              Container(child: Text('Tipo: ${evento['tipo']}',style: TextStyle(fontSize: 20), softWrap: true,)),
                             ],
                           ),
                           Row(
                             children: [
-                              Icon(HeroIcons.clipboard),
+                          
                               Container(
                                 width: 350,
-                                child: Text(' Descripción: ${evento['descripcion']}',style: TextStyle(fontSize: 20), softWrap: true,)),
+                                child: Text('Descripción: ${evento['fechaHora']}',style: TextStyle(fontSize: 20), softWrap: true,)),
                             ],
                           ),
                         ],
