@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:proyecto_3/services/firestore_service.dart';
 
 class DetallePublicPage extends StatefulWidget {
@@ -21,7 +21,7 @@ class _DetallePublicPageState extends State<DetallePublicPage> {
         title: Text('Volver', style: TextStyle(color: Colors.white)),
         leading: InkWell(
           onTap: () => Navigator.pop(context),
-          child: Icon(EvaIcons.backspace, color: Colors.white),
+          child: Icon(HeroIcons.backspace, color: Colors.white),
         ),
       ),
       body: Container(
@@ -80,10 +80,10 @@ class _DetallePublicPageState extends State<DetallePublicPage> {
                             child: Row(
                               children: [
                                 InkWell(
-                                  child: Icon(
-                                    Icons.favorite,
+                                  child: Icon( 
+                                    HeroIcons.fire,
                                     color: Colors.red,
-                                    
+                                    size: 40,
                                   ),
                                   onTap: () {
                                     print(evento['fechaHora']);
@@ -92,7 +92,7 @@ class _DetallePublicPageState extends State<DetallePublicPage> {
                                 SizedBox(width: 5),
                                 Text(
                                   evento['meGusta'].toString(),
-                                  style: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.bold),
+                                  style: TextStyle(fontSize: 30, color: Colors.white, fontWeight: FontWeight.bold),
                                 ),
                               ],
                             ),
@@ -119,32 +119,49 @@ class _DetallePublicPageState extends State<DetallePublicPage> {
                     SizedBox(height: 20), // Espacio entre el nombre del evento y otros datos
               
                     // Otros datos del evento debajo del nombre
-                    Container(
-                      padding: EdgeInsets.all(5),
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Text('Lugar: ${evento['lugar']}', style: TextStyle(fontSize: 20),
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(5),
+                        child: Column(
+                          children: [
+                            Expanded(
+                              child: Column(
+                                
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Icon(HeroIcons.map_pin),
+                                      Text(' Lugar: ${evento['lugar']}', style: TextStyle(fontSize: 20),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Icon(HeroIcons.sparkles),
+                                      Container(child: Text(' Tipo: ${evento['tipo']}',style: TextStyle(fontSize: 20), softWrap: true,)),
+                                    ],
+                                  ),
+                                ],
                               ),
-                              
-                              
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Container(child: Text('Tipo: ${evento['tipo']}',style: TextStyle(fontSize: 20), softWrap: true,)),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                          
-                              Container(
-                                width: 350,
-                                child: Text('Descripción: ${evento['fechaHora']}',style: TextStyle(fontSize: 20), softWrap: true,)),
-                            ],
-                          ),
-                        ],
+                            ),
+                            Expanded(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Icon(HeroIcons.clipboard),
+                                      Container(
+                                        width: 350,
+                                        child: Text(' Descripción: ${evento['descripcion']}',style: TextStyle(fontSize: 20), softWrap: true,)),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],
